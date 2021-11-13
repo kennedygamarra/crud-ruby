@@ -16,14 +16,15 @@
     <%= form.number_field :cantidad %>
   </div>
 
-  <div class="field">
+<div class="field">
     <%= form.label :Prestamos_id %>
-    <%= form.text_field :Prestamos_id %>
+    <%= form.select :Prestamos_id, options_for_select(Prestamo.all.map{|s|[s.Usuario.id, s.id]}) %>
+ 
   </div>
 
   <div class="field">
     <%= form.label :Libros_id %>
-    <%= form.text_field :Libros_id %>
+    <%= form.select :Libros_id, options_for_select(Libro.all.map{|s|[s.titulo, s.id]}) %>
   </div>
 
   <div class="actions">
