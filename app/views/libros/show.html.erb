@@ -11,9 +11,9 @@
 </p>
 
 <p>
-  <strong>Anyo:</strong>
+  <strong>Año</strong>
   <%= @libro.anyo %>
 </p>
 
-<%= link_to 'Edit', edit_libro_path(@libro) %> |
-<%= link_to 'Back', libros_path %>
+<%= link_to 'Editar', edit_libro_path(@libro), class: "btn btn-link"  %> |
+<%= link_to 'Regresar', libros_path, class: "btn btn-link" %>

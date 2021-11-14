@@ -1,6 +1,5 @@
-<h1>Editing Libro</h1>
+<h1>Actualizar Libro</h1>
 
-<%= render 'form', libro: @libro %>
+<%= render 'form', libro: @libro, button_name: 'Actualizar libro' %>
 
-<%= link_to 'Show', @libro %> |
-<%= link_to 'Back', libros_path %>
+<%= link_to 'Regresar', libros_path, class: "btn btn-link"  %>

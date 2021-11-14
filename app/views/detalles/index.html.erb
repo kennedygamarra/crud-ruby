@@ -18,9 +18,9 @@
         <td><%= detalle.cantidad %></td>
         <td><%= detalle.Prestamos_id %></td>
         <td><%= detalle.Libros_id %></td>
-        <td><%= link_to 'Show', detalle %></td>
-        <td><%= link_to 'Edit', edit_detalle_path(detalle) %></td>
-        <td><%= link_to 'Destroy', detalle, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', detalle %></td>
+        <td><%= link_to 'Editar', edit_detalle_path(detalle) %></td>
+        <td><%= link_to 'Eliminar', detalle, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
       </tr>
     <% end %>
   </tbody>
