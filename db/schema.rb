@@ -14,12 +14,12 @@ ActiveRecord::Schema.define(version: 2021_11_15_161719) do
 
   create_table "detalles", force: :cascade do |t|
     t.integer "cantidad"
-    t.integer "Prestamos_id", null: false
-    t.integer "Libros_id", null: false
+    t.integer "Prestamo_id", null: false
+    t.integer "Libro_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["Libros_id"], name: "index_detalles_on_Libros_id"
-    t.index ["Prestamos_id"], name: "index_detalles_on_Prestamos_id"
+    t.index ["Libro_id"], name: "index_detalles_on_Libro_id"
+    t.index ["Prestamo_id"], name: "index_detalles_on_Prestamo_id"
   end
 
   create_table "libros", force: :cascade do |t|
@@ -61,8 +61,8 @@ ActiveRecord::Schema.define(version: 2021_11_15_161719) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "detalles", "Libros", column: "Libros_id"
-  add_foreign_key "detalles", "Prestamos", column: "Prestamos_id"
+  add_foreign_key "detalles", "Libros"
+  add_foreign_key "detalles", "Prestamos"
   add_foreign_key "multas", "Prestamos"
   add_foreign_key "prestamos", "Usuarios"
 end
