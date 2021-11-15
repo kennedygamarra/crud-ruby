@@ -5,7 +5,7 @@ class PrestamosController < ApplicationController
   def index
 
     if (params.has_key?(:Usuarios_id)) && params[:Usuarios_id] != '' then 
-      @prestamos = Prestamo.where({ Usuarios_id: params[:Usuarios_id] })
+      @prestamos = Prestamo.where({ Usuario_id: params[:Usuarios_id] })
     else
       @prestamos = Prestamo.joins(:Usuario)
     end 
