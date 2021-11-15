@@ -1,4 +1,4 @@
 class Detalle < ApplicationRecord
-  belongs_to :Prestamos
-  belongs_to :Libros
+  belongs_to :Prestamo, :optional => true
+  belongs_to :Libro, :optional => true
 end

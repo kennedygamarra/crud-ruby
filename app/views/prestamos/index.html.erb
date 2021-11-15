@@ -2,7 +2,19 @@
 
 <h1>Prestamos</h1>
 
-<table>
+<div class="d-flex justify-content-between">
+  <div class="m-3">
+    <form method="GET" class="form-group row">
+      <%= select("", "Usuarios_id", Usuario.all.map{|s|[s.nombres, s.id]}, { include_blank: '' }, {class: "form-control"}) %>
+      <input type="submit" value="Filtrar" class="btn btn-primary"/>
+    </form>
+  </div>
+  <div class="m-2">
+    <%= link_to 'Nuevo Prestamo', new_prestamo_path, class: "btn btn-primary" %>
+  </div>
+</div>
+
+<table class="table">
   <thead>
     <tr>
       <th>Fecha</th>
@@ -18,9 +30,9 @@
         <td><%= prestamo.fecha %></td>
         <td><%= prestamo.estado %></td>
         <td><%= prestamo.Usuarios_id %></td>
-        <td><%= link_to 'Show', prestamo %></td>
-        <td><%= link_to 'Edit', edit_prestamo_path(prestamo) %></td>
-        <td><%= link_to 'Destroy', prestamo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', prestamo %></td>
+        <td><%= link_to 'Editar', edit_prestamo_path(prestamo) %></td>
+        <td><%= link_to 'Elimnar', prestamo, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +40,3 @@
 
 <br>
 
-<%= link_to 'New Prestamo', new_prestamo_path %>

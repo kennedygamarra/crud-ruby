@@ -1,3 +1,3 @@
 class Prestamo < ApplicationRecord
-  belongs_to :Usuarios
+  belongs_to :Usuario, :optional => true
 end

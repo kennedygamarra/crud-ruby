@@ -11,23 +11,22 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field form-group col-2">
     <%= form.label :cantidad %>
-    <%= form.number_field :cantidad %>
+    <%= form.number_field :cantidad, class: 'form-control'%>
   </div>
 
-<div class="field">
+  <div class="field form-group col-2">
     <%= form.label :Prestamos_id %>
-    <%= form.select :Prestamos_id, options_for_select(Prestamo.all.map{|s|[s.Usuario.id, s.id]}) %>
- 
+    <%= form.select :Prestamos_id, options_for_select(Prestamo.all.map{|s|[s.id, s.id]}, form.object.Prestamos_id), {}, { :class => 'form-control' } %>
   </div>
 
-  <div class="field">
+  <div class="field form-group col-2">
     <%= form.label :Libros_id %>
-    <%= form.select :Libros_id, options_for_select(Libro.all.map{|s|[s.titulo, s.id]}) %>
+    <%= form.select :Libros_id, options_for_select(Libro.all.map{|s|[s.titulo, s.id]}, form.object.Libros_id), {}, { :class => 'form-control' } %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-primary ml-3" %>
   </div>
 <% end %>

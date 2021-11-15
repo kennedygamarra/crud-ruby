@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Valor:</strong>
+  <%= @multa.valor %>
+</p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @multa.fecha %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @multa.estado %>
+</p>
+
+<p>
+  <strong>Prestamo:</strong>
+  <%= @multa.Prestamo_id %>
+</p>
+
+<%= link_to 'Edit', edit_multa_path(@multa) %> |
+<%= link_to 'Back', multas_path %>

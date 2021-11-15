@@ -11,42 +11,42 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field form-group col-3">
     <%= form.label :nombres %>
-    <%= form.text_field :nombres %>
+    <%= form.text_field :nombres, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="field form-group col-3">
     <%= form.label :apellidos %>
-    <%= form.text_field :apellidos %>
+    <%= form.text_field :apellidos, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="field form-group col-2">
     <%= form.label :direccion %>
-    <%= form.text_field :direccion %>
+    <%= form.text_field :direccion, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="field form-group col-2">
     <%= form.label :telefono %>
-    <%= form.text_field :telefono %>
+    <%= form.text_field :telefono, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="field form-group col-2">
     <%= form.label :login %>
-    <%= form.text_field :login %>
+    <%= form.text_field :login, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="field form-group col-2">
     <%= form.label :password %>
-    <%= form.text_field :password %>
+    <%= form.text_field :password, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="field form-group col-3">
     <%= form.label :email %>
-    <%= form.text_field :email %>
+    <%= form.text_field :email, class: 'form-control' %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: 'btn btn-primary ml-3' %>
   </div>
 <% end %>
