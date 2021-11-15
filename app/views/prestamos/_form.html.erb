@@ -23,7 +23,7 @@
 
   <div class="field form-group col-2">
     <%= form.label :Usuarios_id %>
-    <%= form.select :Usuarios_id, options_for_select(Usuario.all.map{|s|[s.nombres, s.id]}), {}, { :class => 'form-control' }  %>
+    <%= form.select :Usuarios_id, options_for_select(Usuario.all.map{|s|[s.nombres, s.id]}, form.object.Usuarios_id), {}, { :class => 'form-control' }  %>
   </div>
 
   <div class="actions form-group">
