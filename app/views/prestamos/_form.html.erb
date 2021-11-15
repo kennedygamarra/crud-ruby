@@ -11,23 +11,22 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field form-group col-2">
     <%= form.label :fecha %>
-    <%= form.date_select :fecha %>
+    <%= form.date_select :fecha, {}, { :class => 'form-control' }  %>
   </div>
 
-  <div class="field">
+  <div class="field form-group col-2">
     <%= form.label :estado %>
-    <%= form.number_field :estado %>
+    <%= form.number_field :estado, class: 'form-control'  %>
   </div>
 
-  <div class="field">
+  <div class="field form-group col-2">
     <%= form.label :Usuarios_id %>
-    <%= form.select :Usuarios_id, options_for_select(Usuario.all.map{|s|[s.nombres, s.id]}) %>
-
+    <%= form.select :Usuarios_id, options_for_select(Usuario.all.map{|s|[s.nombres, s.id]}), {}, { :class => 'form-control' }  %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions form-group">
+    <%= form.submit class: "btn btn-primary ml-3" %>
   </div>
 <% end %>
