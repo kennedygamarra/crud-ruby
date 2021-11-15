@@ -3,7 +3,7 @@ class CreatePrestamos < ActiveRecord::Migration[6.0]
     create_table :prestamos do |t|
       t.date :fecha
       t.integer :estado
-      t.references :Usuarios, null: false, foreign_key: true
+      t.references :Usuario, null: false, foreign_key: true
 
       t.timestamps
     end

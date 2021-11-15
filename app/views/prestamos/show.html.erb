@@ -12,8 +12,8 @@
 
 <p>
   <strong>Usuarios:</strong>
-  <%= @prestamo.Usuarios_id %>
+  <%= @prestamo.Usuario.nombres %> <%= @prestamo.Usuario.apellidos %>
 </p>
 
-<%= link_to 'Edit', edit_prestamo_path(@prestamo) %> |
-<%= link_to 'Back', prestamos_path %>
+<%= link_to 'Editar', edit_prestamo_path(@prestamo) %> |
+<%= link_to 'Regreso', prestamos_path %>

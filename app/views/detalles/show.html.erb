@@ -7,12 +7,12 @@
 
 <p>
   <strong>Prestamos:</strong>
-  <%= @detalle.Prestamos_id %>
+  <%= @detalle.Prestamo_id %>
 </p>
 
 <p>
   <strong>Libros:</strong>
-  <%= @detalle.Libros_id %>
+  <%= @detalle.Libro.titulo %>
 </p>
 
 <%= link_to 'Edit', edit_detalle_path(@detalle) %> |

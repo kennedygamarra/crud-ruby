@@ -1,3 +1,3 @@
 class Usuario < ApplicationRecord
-    has_many :prestamo
+    has_many :Prestamo
 end

@@ -5,9 +5,9 @@ class PrestamosController < ApplicationController
   def index
 
     if (params.has_key?(:Usuarios_id)) && params[:Usuarios_id] != '' then 
-      @prestamos = Prestamo.where({ Usuarios_id: params[:Usuarios_id] })
+      @prestamos = Prestamo.where({ Usuario_id: params[:Usuarios_id] })
     else
-      @prestamos = Prestamo.all
+      @prestamos = Prestamo.joins(:Usuario)
     end 
   end
 
@@ -69,6 +69,6 @@ class PrestamosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def prestamo_params
-      params.require(:prestamo).permit(:fecha, :estado, :Usuarios_id)
+      params.require(:prestamo).permit(:fecha, :estado, :Usuario_id)
     end
 end

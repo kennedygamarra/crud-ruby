@@ -22,8 +22,8 @@
     <% @detalles.each do |detalle| %>
       <tr>
         <td><%= detalle.cantidad %></td>
-        <td><%= detalle.Prestamos_id %></td>
-        <td><%= detalle.Libros_id %></td>
+        <td><%= detalle.Prestamo_id %></td>
+        <td><%= detalle.Libro.titulo %></td>
         <td><%= link_to 'Mostrar', detalle %></td>
         <td><%= link_to 'Editar', edit_detalle_path(detalle) %></td>
         <td><%= link_to 'Eliminar', detalle, method: :delete, data: { confirm: 'Estas seguro?' } %></td>

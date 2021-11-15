@@ -17,13 +17,13 @@
   </div>
 
   <div class="field form-group col-2">
-    <%= form.label :Prestamos_id %>
-    <%= form.select :Prestamos_id, options_for_select(Prestamo.all.map{|s|[s.id, s.id]}, form.object.Prestamos_id), {}, { :class => 'form-control' } %>
+    <%= form.label :Prestamo_id %>
+    <%= form.select :Prestamo_id, options_for_select(Prestamo.all.map{|s|[s.id, s.id]}, form.object.Prestamo_id), {}, { :class => 'form-control' } %>
   </div>
 
   <div class="field form-group col-2">
-    <%= form.label :Libros_id %>
-    <%= form.select :Libros_id, options_for_select(Libro.all.map{|s|[s.titulo, s.id]}, form.object.Libros_id), {}, { :class => 'form-control' } %>
+    <%= form.label :Libro_id %>
+    <%= form.select :Libro_id, options_for_select(Libro.all.map{|s|[s.titulo, s.id]}, form.object.Libro_id), {}, { :class => 'form-control' } %>
   </div>
 
   <div class="actions">

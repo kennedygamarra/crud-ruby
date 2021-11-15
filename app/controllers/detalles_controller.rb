@@ -3,7 +3,7 @@ class DetallesController < ApplicationController
 
   # GET /detalles or /detalles.json
   def index
-    @detalles = Detalle.all
+    @detalles = Detalle.joins(:Libro)
   end
 
   # GET /detalles/1 or /detalles/1.json
@@ -64,6 +64,6 @@ class DetallesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def detalle_params
-      params.require(:detalle).permit(:cantidad, :Prestamos_id, :Libros_id)
+      params.require(:detalle).permit(:cantidad, :Prestamo_id, :Libro_id)
     end
 end
