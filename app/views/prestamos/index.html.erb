@@ -2,7 +2,13 @@
 
 <h1>Prestamos</h1>
 
-<div class="d-flex justify-content-end">
+<div class="d-flex justify-content-between">
+  <div class="m-2">
+    <form method="GET">
+      <%= select("", "Usuarios_id", Usuario.all.map{|s|[s.nombres, s.id]}, { include_blank: '' }) %>
+      <input type="submit" values="Enviar" class="btn btn-primary"/>
+    </form>
+  </div>
   <div class="m-2">
     <%= link_to 'Nuevo Prestamo', new_prestamo_path, class: "btn btn-primary" %>
   </div>

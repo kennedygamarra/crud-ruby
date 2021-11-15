@@ -3,7 +3,12 @@ class PrestamosController < ApplicationController
 
   # GET /prestamos or /prestamos.json
   def index
-    @prestamos = Prestamo.all
+
+    if (params.has_key?(:Usuarios_id)) && params[:Usuarios_id] != '' then 
+      @prestamos = Prestamo.where({ Usuarios_id: params[:Usuarios_id] })
+    else
+      @prestamos = Prestamo.all
+    end 
   end
 
   # GET /prestamos/1 or /prestamos/1.json
