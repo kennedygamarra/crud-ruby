@@ -3,10 +3,10 @@
 <h1>Prestamos</h1>
 
 <div class="d-flex justify-content-between">
-  <div class="m-2">
-    <form method="GET">
-      <%= select("", "Usuarios_id", Usuario.all.map{|s|[s.nombres, s.id]}, { include_blank: '' }) %>
-      <input type="submit" values="Enviar" class="btn btn-primary"/>
+  <div class="m-3">
+    <form method="GET" class="form-group row">
+      <%= select("", "Usuarios_id", Usuario.all.map{|s|[s.nombres, s.id]}, { include_blank: '' }, {class: "form-control"}) %>
+      <input type="submit" value="Filtrar" class="btn btn-primary"/>
     </form>
   </div>
   <div class="m-2">
