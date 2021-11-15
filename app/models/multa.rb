@@ -1,3 +1,3 @@
 class Multa < ApplicationRecord
-  belongs_to :Prestamos
+  belongs_to :Prestamo
 end

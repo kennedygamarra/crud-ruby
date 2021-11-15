@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Multas</h1>
+
+<div class="d-flex justify-content-end">
+  <div class="m-2">
+    <%= link_to 'Nueva Multa', new_multa_path, class: "btn btn-primary" %>
+  </div>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Valor</th>
+      <th>Fecha</th>
+      <th>Estado</th>
+      <th>Prestamo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @multas.each do |multa| %>
+      <tr>
+        <td><%= multa.valor %></td>
+        <td><%= multa.fecha %></td>
+        <td><%= multa.estado %></td>
+        <td><%= multa.Prestamo_id %></td>
+        <td><%= link_to 'Mostrar', multa %></td>
+        <td><%= link_to 'Editar', edit_multa_path(multa) %></td>
+        <td><%= link_to 'Eliminar', multa, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

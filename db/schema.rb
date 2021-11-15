@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_13_005931) do
+ActiveRecord::Schema.define(version: 2021_11_15_161719) do
 
   create_table "detalles", force: :cascade do |t|
     t.integer "cantidad"
@@ -40,6 +40,16 @@ ActiveRecord::Schema.define(version: 2021_11_13_005931) do
     t.index ["Prestamos_id"], name: "index_multa_on_Prestamos_id"
   end
 
+  create_table "multas", force: :cascade do |t|
+    t.decimal "valor"
+    t.date "fecha"
+    t.integer "estado"
+    t.integer "Prestamo_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["Prestamo_id"], name: "index_multas_on_Prestamo_id"
+  end
+
   create_table "prestamos", force: :cascade do |t|
     t.date "fecha"
     t.integer "estado"
@@ -64,5 +74,6 @@ ActiveRecord::Schema.define(version: 2021_11_13_005931) do
   add_foreign_key "detalles", "Libros", column: "Libros_id"
   add_foreign_key "detalles", "Prestamos", column: "Prestamos_id"
   add_foreign_key "multa", "Prestamos", column: "Prestamos_id"
+  add_foreign_key "multas", "Prestamos"
   add_foreign_key "prestamos", "Usuarios", column: "Usuarios_id"
 end
