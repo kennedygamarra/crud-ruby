@@ -29,7 +29,7 @@
       <tr>
         <td><%= prestamo.fecha %></td>
         <td><%= prestamo.estado %></td>
-        <td><%= prestamo.Usuarios_id %></td>
+        <td><%= prestamo.Usuario.nombres %> <%= prestamo.Usuario.apellidos %></td>
         <td><%= link_to 'Mostrar', prestamo %></td>
         <td><%= link_to 'Editar', edit_prestamo_path(prestamo) %></td>
         <td><%= link_to 'Elimnar', prestamo, method: :delete, data: { confirm: 'Estas seguro?' } %></td>

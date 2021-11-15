@@ -30,16 +30,6 @@ ActiveRecord::Schema.define(version: 2021_11_15_161719) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "multa", force: :cascade do |t|
-    t.decimal "valor"
-    t.date "fecha"
-    t.integer "estado"
-    t.integer "Prestamos_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["Prestamos_id"], name: "index_multa_on_Prestamos_id"
-  end
-
   create_table "multas", force: :cascade do |t|
     t.decimal "valor"
     t.date "fecha"
@@ -53,10 +43,10 @@ ActiveRecord::Schema.define(version: 2021_11_15_161719) do
   create_table "prestamos", force: :cascade do |t|
     t.date "fecha"
     t.integer "estado"
-    t.integer "Usuarios_id", null: false
+    t.integer "Usuario_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["Usuarios_id"], name: "index_prestamos_on_Usuarios_id"
+    t.index ["Usuario_id"], name: "index_prestamos_on_Usuario_id"
   end
 
   create_table "usuarios", force: :cascade do |t|
@@ -73,7 +63,6 @@ ActiveRecord::Schema.define(version: 2021_11_15_161719) do
 
   add_foreign_key "detalles", "Libros", column: "Libros_id"
   add_foreign_key "detalles", "Prestamos", column: "Prestamos_id"
-  add_foreign_key "multa", "Prestamos", column: "Prestamos_id"
   add_foreign_key "multas", "Prestamos"
-  add_foreign_key "prestamos", "Usuarios", column: "Usuarios_id"
+  add_foreign_key "prestamos", "Usuarios"
 end
